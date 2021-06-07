@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $barang = Barang::latest()->paginate(5);
+
+        /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
+        /// include dengan number index
+        return view('home',compact('barang'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function adminHome()
     {

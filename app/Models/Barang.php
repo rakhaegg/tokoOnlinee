@@ -10,7 +10,7 @@ class Barang extends Model
     use HasFactory;
 
     protected $fillable = [
-        'namaBarang', 'image'
+        'namaBarang', 'image' , 'harga'
     ];
 
 }

@@ -4,7 +4,7 @@
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Edit Post</h2>
+                <h2>Edit Barang</h2>
             </div>
             <div class="float-right">
                 <a class="btn btn-secondary" href="{{ route('barang.index') }}"> Back</a>
@@ -30,15 +30,21 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Title:</strong>
-                    <input type="text" name="namaBarang" value="{{ $barang->title }}" class="form-control" placeholder="Title">
+                    <strong>Nama Barang </strong>
+                    <input type="text" name="namaBarang" value="{{ $barang->namaBarang }}" class="form-control" placeholder="Nama Barang">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Content:</strong>
-                    <input type="file" name="image" class="form-control" placeholder="image">
+                    <strong>Gambar </strong>
+                    <input type="file" name="image" class="form-control" placeholder="Gambar" value="{{$barang->image}}">
                     <img src="/image/{{ $barang->image }}" width="300px">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Harga</strong>
+                    <input type="text" name="harga" value="{{ $barang->harga }}" class="form-control" placeholder="Harga">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

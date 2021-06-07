@@ -44,6 +44,7 @@ class BarangController extends Controller
         $request->validate([
             'namaBarang' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'harga' => 'required' ,
         ]);
         $input = $request->all();
         /// insert setiap request dari form ke dalam database via model
@@ -109,8 +110,10 @@ class BarangController extends Controller
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
             'namaBarang' => 'required',
+            'harga' => 'required' ,
             'image' => 'required',
         ]);
+
         $input = $request->all();
         if ($image = $request->file('image')) {
 
@@ -128,7 +131,7 @@ class BarangController extends Controller
 
         }
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $barang->update($request->all());
+        $barang->update($input);
 
         /// setelah berhasil mengubah data
         return redirect()->route('barang.index')

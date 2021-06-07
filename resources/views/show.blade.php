@@ -15,14 +15,20 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {{ $barang->title }}
+                <strong>Nama Barang</strong>
+                {{ $barang->namaBarang }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Content:</strong>
+                <strong>Gambar</strong>
                 <img src="/image/{{ $barang->image }}" width="500px">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Harga  </strong>
+                {{$barang->harga}}
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@
             <th width="20px" class="text-center">No</th>
             <th>Nama Barang</th>
             <th>Gambar</th>
+            <th>Harga</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
         @foreach ($barang as $barangs)
@@ -30,6 +31,7 @@
                 <td class="text-center">{{ ++$i }}</td>
                 <td>{{ $barangs->namaBarang }}</td>
                 <td><img src="/image/{{ $barangs->image }}" width="100px"></td>
+                <td>{{ $barangs->harga }}</td>
                 <td class="text-center">
                     <form action="{{ route('barang.destroy',$barangs->id) }}" method="POST">
 
